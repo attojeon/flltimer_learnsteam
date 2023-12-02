@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+#timer {
+    font-size: 35vw; /* 크기를 최대로 조정 */
+    letter-spacing: 10px; /* 글자 사이 간격을 넓힘 */
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 5px 20px;
+    padding: 20px 30px; /* 버튼 크기 확대 */
+    font-size: 3vw;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+#start-pause-btn {
+    background-color: blue; /* START 버튼은 파란색 */
+}
+
+#reset-btn {
+    background-color: red; /* RESET 버튼은 빨간색 */
+}
+
+.top-left-banner {
+    position: fixed; /* 화면의 좌측 상단에 고정 */
+    top: 0;
+    right: 0;
+    background-color: red; /* 배경색을 붉은색으로 설정 */
+    margin: 10px;
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    padding: 10px;
+    font-size: 40px;
+    z-index: 1000; /* 다른 요소들 위에 표시되도록 z-index 설정 */
+    animation: wave 1s infinite linear; /* 애니메이션 적용 */
+}
+/* 펄럭이는 효과를 위한 keyframes 정의 */
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
