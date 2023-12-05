@@ -28,18 +28,14 @@ function startPauseTimer() {
     if (!isTimerRunning) {
         startSound.play(); // 0초가 되었을 때 사운드 재생
         interval = setInterval(() => {
-            if (timer > 0) {
-                timer--;
-            } else {
-                timer--; // 0초에 도달한 후 계속 감소시켜 경과 시간을 표시
-            }
-            updateDisplay();
-
             if (timer === 30) {
                 warningSound.play();
             } else if (timer === 0) {
                 startSound.play(); // 0초가 되었을 때 사운드 재생
             }
+            timer--;
+
+            updateDisplay();
         }, 1000);
         startPauseButton.textContent = 'PAUSE';
         isTimerRunning = true;
@@ -49,35 +45,6 @@ function startPauseTimer() {
         isTimerRunning = false;
     }
 }
-
-// function startPauseTimer() {
-//     if (!isTimerRunning) {
-//         startSound.play();
-//         interval = setInterval(() => {
-//             if (timer > 0) {
-//                 timer--;
-//                 updateDisplay();
-//                 if (timer === 30) {
-//                     warningSound.play();
-//                 }
-//             } else if (timer === 0) {
-//                 timer--;
-//                 updateDisplay();
-//                 startSound.play();
-//             }
-//             else {
-//                 clearInterval(interval);
-//                 console.log('Timer is already 0', timer);
-//             }
-//         }, 1000);
-//         startPauseButton.textContent = 'PAUSE';
-//         isTimerRunning = true;
-//     } else {
-//         clearInterval(interval);
-//         startPauseButton.textContent = 'START';
-//         isTimerRunning = false;
-//     }
-// }
 
 function resetTimer() {
     clearInterval(interval);
